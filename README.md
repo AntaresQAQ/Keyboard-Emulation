@@ -26,6 +26,25 @@ python3 -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requiremen
 下载[PyWin32](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pywin32) 和 [PyHook](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyhook)
 
 ```bash
-python3 -m pip install pyHook-xxxx.whl pywin32‑xxxx.whl
+python -m pip install pyHook-xxxx.whl pywin32‑xxxx.whl
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+```
+
+**MacOS**
+
+需要安装Quartz, AppKit
+
+```bash
 python3 -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
+
+##### 运行
+
+在程序目录下新建input.txt文件，写入需要模拟输入的字符
+
+在程序目录下执行：
+
+```bash
+python3 run.py
+```
+
