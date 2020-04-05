@@ -20,15 +20,23 @@ class Keyboard:
         if platform.system() == "Linux":
             self.special_key_map['<'] = self.keyboard.lookup_character_keycode('<')
 
-    def run(self):
+    def init(self):
         self.keyboard = PyKeyboard()
         self.gen_keymap()
+
+    @staticmethod
+    def read_file() -> str:
         try:
             with open("input.txt", "r") as file:
                 data = file.read()
         except FileNotFoundError:
             with open("input-example.txt", "r") as file:
                 data = file.read()
+        return data
+
+    def run(self):
+        self.init()
+        data = self.read_file()
         print(f"Keyboard Emulation will run after {config.EXECUTION_DELAY}s")
         time.sleep(config.EXECUTION_DELAY)
         print("Running...")
@@ -49,5 +57,4 @@ class Keyboard:
 
 
 if __name__ == "__main__":
-    program = Keyboard()
-    program.run()
+    Keyboard().run()
