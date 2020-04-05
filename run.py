@@ -23,15 +23,15 @@ class Keyboard:
     def run(self):
         self.keyboard = PyKeyboard()
         self.gen_keymap()
-        print(f"Keyboard Emulation will run after {config.EXECUTION_DELAY}s")
-        time.sleep(config.EXECUTION_DELAY)
-        print("Running...")
         try:
             with open("input.txt", "r") as file:
                 data = file.read()
         except FileNotFoundError:
             with open("input-example.txt", "r") as file:
                 data = file.read()
+        print(f"Keyboard Emulation will run after {config.EXECUTION_DELAY}s")
+        time.sleep(config.EXECUTION_DELAY)
+        print("Running...")
         for item in data:
             key = self.special_key_map[item] if item in self.special_key_map else item
             try:
