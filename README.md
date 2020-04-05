@@ -40,7 +40,9 @@ python3 -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requiremen
 
 ##### 运行
 
-在程序目录下新建input.txt文件，写入需要模拟输入的字符
+复制`config_default.py`为`config.py`，按实际需要修改配置参数
+
+在程序目录下新建`input.txt`文件，写入需要模拟输入的字符
 
 在程序目录下执行：
 
