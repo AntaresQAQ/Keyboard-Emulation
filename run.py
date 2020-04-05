@@ -12,7 +12,8 @@ class Keyboard:
         self.special_key_map = {
             '\n': self.keyboard.enter_key,
             '\t': self.keyboard.tab_key,
-            '<': self.keyboard.lookup_character_keycode('<')  # It's a bug in PyUserInput
+            # It's a bug in PyUserInput
+            '<': self.keyboard.lookup_character_keycode('<')
         }
 
     def run(self):
@@ -37,7 +38,7 @@ class Keyboard:
                     print(f"Succeed input {item.encode()}")
             except Exception as ex:
                 if config.DEBUG:
-                    print(ex,file=sys.stderr)
+                    print(ex, file=sys.stderr)
                 print(f"Ignore invalid symbol {item.encode()}")
             time.sleep(config.KEYS_INTERVAL / 1000)
         print("End!")
