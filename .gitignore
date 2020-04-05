@@ -5,3 +5,5 @@
 .vscode
 
 __pycache__
+config.py
+input.txt

@@ -1,6 +1,9 @@
 from pykeyboard import PyKeyboard
 import time
-import config
+try:
+    import config
+except ModuleNotFoundError:
+    import config_default as config
 
 
 class Keyboard:
