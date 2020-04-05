@@ -6,3 +6,6 @@ KEYS_INTERVAL = 200
 
 # 按键持续时间，单位毫秒(ms)
 PRESS_DURATION = 10
+
+# DEBUG
+DEBUG = False

@@ -1,5 +1,6 @@
 from pykeyboard import PyKeyboard
 import time
+import sys
 try:
     import config
 except ModuleNotFoundError:
@@ -32,8 +33,11 @@ class Keyboard:
                 self.keyboard.press_key(key)
                 time.sleep(config.PRESS_DURATION / 1000)
                 self.keyboard.release_key(key)
+                if config.DEBUG:
+                    print(f"Succeed input {item.encode()}")
             except Exception as ex:
-                print(ex)
+                if config.DEBUG:
+                    print(ex,file=sys.stderr)
                 print(f"Ignore invalid symbol {item.encode()}")
             time.sleep(config.KEYS_INTERVAL / 1000)
         print("End!")
