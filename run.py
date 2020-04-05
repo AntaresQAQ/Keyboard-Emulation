@@ -1,6 +1,8 @@
 from pykeyboard import PyKeyboard
 import time
 import sys
+import platform
+
 try:
     import config
 except ModuleNotFoundError:
@@ -11,10 +13,12 @@ class Keyboard:
     def gen_keymap(self):
         self.special_key_map = {
             '\n': self.keyboard.enter_key,
-            '\t': self.keyboard.tab_key,
-            # It's a bug in PyUserInput
-            '<': self.keyboard.lookup_character_keycode('<')
+            '\t': self.keyboard.tab_key
         }
+
+        # It's a bug in PyUserInput
+        if platform.system() == "Linux":
+            self.special_key_map['<'] = self.keyboard.lookup_character_keycode('<')
 
     def run(self):
         self.keyboard = PyKeyboard()
