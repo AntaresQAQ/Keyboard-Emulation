@@ -35,6 +35,8 @@ class Keyboard:
         except FileNotFoundError:
             with open("input-example.txt", "r") as file:
                 data = file.read()
+        if config.DEBUG:
+            print(f"file:\n{data}")
         return data
 
     def run(self):
@@ -50,7 +52,7 @@ class Keyboard:
                 time.sleep(config.PRESS_DURATION / 1000)
                 self.keyboard.release_key(key)
                 if config.DEBUG:
-                    print(f"Succeed input {item.encode()}")
+                    print(f"Succeed press {item.encode()}")
             except Exception as ex:
                 if config.DEBUG:
                     print(ex, file=sys.stderr)
