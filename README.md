@@ -50,3 +50,6 @@ python3 -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requiremen
 python3 run.py
 ```
 
+娱乐项目，不具有任何实际学习意义，也没有什么卵用，只是用来玩的！！！
+
+俺只是个啥都不会搞的初学者，每天只能干些无意义的事情。
