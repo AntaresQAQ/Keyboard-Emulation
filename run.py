@@ -46,6 +46,8 @@ class Keyboard:
         time.sleep(config.EXECUTION_DELAY)
         print("Running...")
         for item in data:
+            if item in config.IGNORE_CHARS:
+                continue
             key = self.special_key_map[item] if item in self.special_key_map else item
             try:
                 self.keyboard.press_key(key)

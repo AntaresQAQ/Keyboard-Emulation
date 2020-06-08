@@ -9,3 +9,5 @@ PRESS_DURATION = 10
 
 # DEBUG
 DEBUG = False
+
+IGNORE_CHARS = set()
